@@ -1,8 +1,9 @@
+import 'package:admin_dashborad/app/core/util/responsive.dart';
 import 'package:admin_dashborad/app/core/widgets/custom_card_widget.dart';
 import 'package:admin_dashborad/app/data/data/line_chart_data.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 
 class LineChartCard extends StatelessWidget {
   const LineChartCard({super.key});
@@ -23,7 +24,7 @@ class LineChartCard extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           AspectRatio(
-            aspectRatio: 16 / 6,
+            aspectRatio: Responsive.isMobile(context) ? 16 / 20 : 16 / 6,
             child: LineChart(
               LineChartData(
                 lineTouchData: const LineTouchData(
